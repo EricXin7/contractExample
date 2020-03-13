@@ -113,10 +113,39 @@ Market合约实现使用ICO认购的代币购买虚拟商品的过程，拥有�
 
 ## Demo页面
 
+### 插件钱包
+
+1. [浏览器插件钱包调用API](https://bcbwallet.readthedocs.io/en/latest/web_api.html)
+2. 插件钱包文件（`web/chrome-extension`）
+
+
 ### 前端部署
+
+``` bash
+# 安装依赖项
+$ npm install
+
+# 本地运行调试
+$ npm run dev
+
+# 打包生成静态页面
+$ npm run generate
+
+# 部署
+# 拷贝dist目录内的文件到服务器nginx下html目录下，配置
+location / {
+    try_files $uri $uri/ /index.html;
+    index index.html index.htm;
+}
+```
 
 ### 前端配置
 
+1. 项目所在目录`web/vue-chain-demo`
+2. `nuxt.config.js`文件下`proxy`配置的合约技术方案部署的地址
+3. 本项目对插件钱包二次封装，参见`wallet.js`文件，调用方法 `this.$wallet.do()`，也可直接调用 `window.bcbWeb.onAccountChanged`
+
 ### 合约调用
 
-
+1. market 合约技术方案（参见web目录下pdf文档）
+2. ico 合约技术方案（参见web目录下pdf文档）

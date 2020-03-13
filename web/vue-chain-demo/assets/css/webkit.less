@@ -1,0 +1,22 @@
+.placeholder(@color: #A4AABB, @size: inherit, @weight: inherit) {
+  &::-webkit-input-placeholder{
+      color:@color;
+      font-size: @size;
+      font-weight: @weight;
+  }
+  &::-moz-placeholder{
+      color:@color;
+      font-size: @size;
+      font-weight: @weight;
+  }
+  &:-moz-placeholder{
+      color:@color;
+      font-size: @size;
+      font-weight: @weight;
+  }
+  &:-ms-input-placeholder{
+      color:@color;
+      font-size: @size;
+      font-weight: @weight;
+  }
+}

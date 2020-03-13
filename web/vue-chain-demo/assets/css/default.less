@@ -1,0 +1,57 @@
+@import './flex.less';
+@import './var.less';
+@import './ant.less';
+
+@font-face{
+    font-family: 'digital';
+    src: url('~@/assets/font/digital.ttf') format('truetype');
+}
+
+body {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #bbb;
+}
+
+.layout {
+    width: 100%;
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.layout100 {
+    width: 100%;
+    padding: 0 25px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.layout1200 {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    -webkit-text-fill-color: #333;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    -moz-appearance: textfield !important;
+    margin: 0 !important;
+}
+.main-color {
+    color: @main-color !important;
+}
+
+.green-color {
+    color: @green-color !important;
+}
+
+.red-color {
+    color: @red-color !important;
+}
