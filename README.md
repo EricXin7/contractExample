@@ -23,7 +23,7 @@ OK
 Address:  bcbtFUvSUXd6xDp6WXq9yNvR3dwqKycb3ZS8c		// 此处地址只是示例，实际应该不一样
 ```
 
-复制以上地址，前往[测试币申请中心](<https://titan.bcbscan.io>)申请测试币，每次申请将立即获取10个bcbt，每天最多申请10次。
+复制以上地址，前往[测试币申请中心](<https://ttoken.bcbchain.io/#/home>)申请测试币，每次申请将立即获取10个bcbt，每天最多申请10次。
 
 
 
