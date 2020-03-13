@@ -137,6 +137,10 @@ location / {
     try_files $uri $uri/ /index.html;
     index index.html index.htm;
 }
+# 配置接口代理（地址根据实际地址可修改）
+location ~ ^/(abci_query) {
+    proxy_pass https://test-earth.bcbchain.io;
+}
 ```
 
 ### 前端配置
