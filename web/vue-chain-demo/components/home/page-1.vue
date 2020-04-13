@@ -13,10 +13,6 @@
                             </div>
                             <div class="detail">
                                 <div class="flex acenter">
-                                    <div class="rtitle">{{$t('t033')}}</div>
-                                    <div class="input">{{i.price | thousands}}</div>
-                                </div>
-                                <div class="flex acenter">
                                     <div class="rtitle">{{$t('t034')}}</div>
                                     <div class="input">{{i.repertory}}</div>
                                 </div>
@@ -25,8 +21,23 @@
                                     <div class="input"><a-input v-model="i.buyNum" :disabled="i.repertory <= 0"></a-input></div>
                                 </div>
                                 <div class="flex acenter">
+                                    <div class="rtitle">{{$t('t033')}}</div>
+                                    <div class="input">
+                                        <select v-model="i.currency">
+                                            <option value="0" label="BCB"></option>
+                                            <option value="1" label="demo"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                 <div class="flex acenter">
+                                    <div class="rtitle">{{$t('t053')}}</div>
+                                    <div class="input" v-if="i.currency == '1'">{{i.price | thousands}}<span>demo</span></div>
+                                    <div class="input" v-if="i.currency == '0'">{{i.bcb_price | thousands}}<span>BCB</span></div>
+                                </div>
+                                <div class="flex acenter">
                                     <div class="rtitle">{{$t('t036')}}</div>
-                                    <div class="input">{{i.buyNum * i.price}}</div>
+                                    <div class="input" v-if="i.currency == '1'">{{i.buyNum * i.price}}<span>demo</span></div>
+                                    <div class="input" v-if="i.currency == '0'">{{i.buyNum * i.bcb_price }}<span>BCB</span></div>
                                 </div>
                             </div>
                             <div class="footer">
@@ -65,10 +76,12 @@
             getlist() {
                 this.spinning = true
                 this.$axios.$get('/abci_query?path="/org9ib7PkkqhjV1A3hMXVgPcoBoxkL3iKdnS/market/goods"').then(data => {
+                    console.log(data)
                     this.goods = (data || []).map(i => {
                         return {
                             ...i,
                             buyNum: 0,
+                            currency: 0,
                             loading: false
                         }
                     })
@@ -76,7 +89,7 @@
                 })
             },
             buy(form) {
-                let total = this.$math.Mul(form.buyNum, form.price)
+                let total = this.$math.Mul(form.buyNum, form.currency == '0'?form.bcb_price:form.price)
                 form.loading = true
                 this.$wallet.action({
                     'note': 'market buy',
