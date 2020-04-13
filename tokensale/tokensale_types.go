@@ -1,4 +1,4 @@
-package ico
+package TokenSale
 
 import (
 	"blockchain/smcsdk/sdk/bn"
