@@ -9,6 +9,7 @@ type Goods struct {
 	Name      string    `json:"name"`
 	Code      string    `json:"code"`
 	Price     bn.Number `json:"price"`
+	BCBPrice  bn.Number `json:"bcb_price"`
 	Repertory int64     `json:"repertory"`
 }
 
@@ -20,4 +21,5 @@ type Record struct {
 	GoodsPrice bn.Number     `json:"goodsPrice"`
 	BuyNum     int64         `json:"buyNum"`
 	Used       bn.Number     `json:"used"`
+	Token      string        `json:"token"`
 }
