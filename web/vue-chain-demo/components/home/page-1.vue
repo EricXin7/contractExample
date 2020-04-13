@@ -76,7 +76,6 @@
             getlist() {
                 this.spinning = true
                 this.$axios.$get('/abci_query?path="/org9ib7PkkqhjV1A3hMXVgPcoBoxkL3iKdnS/market/goods"').then(data => {
-                    console.log(data)
                     this.goods = (data || []).map(i => {
                         return {
                             ...i,
@@ -96,7 +95,7 @@
                     'gasLimit': '25000',
                     'calls': [
                         {
-                            'contract': 'bcbtJ4zVVdGeVNNhBNYRNzoYAvDyyZdtwcDXS',
+                            'contract': 'bcbt4eFiWDvpZJiUUnMm1zubCroYYT5AJmcwm',
                             'method': 'Transfer(types.Address,bn.Number)',
                             'params': ['bcbt2Lj2bDCpp6bff3Y7VB9TJStRzNSKMTenK', total]
                         },
