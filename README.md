@@ -116,7 +116,7 @@ Market合约实现使用ICO认购的代币购买虚拟商品的过程，拥有�
 ### 插件钱包
 
 1. [浏览器插件钱包调用API](https://bcbwallet.readthedocs.io/en/latest/web_api.html)
-2. 插件钱包文件（`web/chrome-extension`）
+2. [插件钱包文件（`web/chrome-extension`）](https://github.com/bcbwallet/bcbwallet-extension/releases)
 
 
 ### 前端部署
