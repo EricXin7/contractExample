@@ -89,18 +89,19 @@
             },
             buy(form) {
                 let total = this.$math.Mul(form.buyNum, form.currency == '0'?form.bcb_price:form.price)
+                let contract = form.currency == '0'? 'bcbt3ScZC4SzPKEHZDYHe7Xsydu6PKoCxzV8g': 'bcbtJ4zVVdGeVNNhBNYRNzoYAvDyyZdtwcDXS'
                 form.loading = true
                 this.$wallet.action({
                     'note': 'market buy',
                     'gasLimit': '25000',
                     'calls': [
                         {
-                            'contract': 'bcbt4eFiWDvpZJiUUnMm1zubCroYYT5AJmcwm',
+                            'contract': contract,
                             'method': 'Transfer(types.Address,bn.Number)',
-                            'params': ['bcbt2Lj2bDCpp6bff3Y7VB9TJStRzNSKMTenK', total]
+                            'params': ['bcbt4GNptjD3mhPdXSwvn8ih51qNe8jD25sRg', total]
                         },
                         {
-                            'contract': 'bcbtBAVVC4Q158Vgci6TeKeht9hVTBYXsc5ah',
+                            'contract': 'bcbt4GNptjD3mhPdXSwvn8ih51qNe8jD25sRg',
                             'method': 'Buy(string)',
                             'params': [form.code]
                         }]

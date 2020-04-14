@@ -70,16 +70,16 @@
                     if (!err) {
                         this.loading = true
                         this.$wallet.action( {
-                            'note': 'ico Exchange',
+                            'note': 'tokensale Exchange',
                             'gasLimit': '25000',
                             'calls': [
                                 {
                                     'contract': 'bcbt3ScZC4SzPKEHZDYHe7Xsydu6PKoCxzV8g',
                                     'method': 'Transfer(types.Address,bn.Number)',
-                                    'params': ['bcbtASRVRCir9W9iCGa6Bh7Eg9o9CzNYD4nj4', values.radio * 1e9]
+                                    'params': ['bcbt62NNaqskogQ9BnM5Te3PFbbzqtibuP1y6', values.radio * 1e9]
                                 },
                                 {
-                                    'contract': 'bcbtLPy7Bu1mWUhYs6DWHsgojTt5F5MauhVag',
+                                    'contract': 'bcbt62NNaqskogQ9BnM5Te3PFbbzqtibuP1y6',
                                     'method': 'Exchange()',
                                     'params': []
                                 }]
@@ -95,7 +95,7 @@
             },
             icon() {
                 this.$wallet.action( {
-                    'note': 'ico Withdraw',
+                    'note': 'tokensale Withdraw',
                     'gasLimit': '25000',
                     'calls': [
                         {
